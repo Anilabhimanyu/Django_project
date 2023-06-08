@@ -1,0 +1,119 @@
+
+Relations
+1. * - *   -------->>>   student - course
+2.  1 - * ---------->>>  book- author
+3.  1 - 1 ---------->>>  person-passport
+
+
+Normalization
+ACID properties
+A atomicity
+C consistency
+I integrity
+D 
+
+
+first normailization
+no column field shoul be consists of multiple values ex: phonenumbers
+
+
+second normailization
+In the 2NF, relational must be in 1NF.
+In the second normal form, all non-key attributes are fully functional dependent on the primary key
+
+
+TEACHER_ID	SUBJECT	    TEACHER_AGE(non prime attribute)
+25	        Chemistry	    30
+25	        Biology	        30
+47	        English	        35
+83	        Math        	38
+83	        Computer	    38
+
+
+Third normailization
+
+
+
+
+Constraints available in SQL are:
+NOT NULL
+UNIQUE
+PRIMARY KEY
+FOREIGN KEY
+CHECK
+DEFAULT
+CREATE INDEX
+
+----------------------------------------------------
+Aggregations
+
+COUNT(): Returns the number of rows or non-null values in a column.
+
+SUM(): Calculates the sum of values in a column.
+
+AVG(): Computes the average of values in a column.
+
+MIN(): Returns the minimum value from a column.
+
+MAX(): Returns the maximum value from a column.
+
+GROUP_CONCAT(): Concatenates values from multiple rows into a single string, usually with a separator.
+
+STDEV(): Computes the standard deviation of values in a column, which measures the amount of variation or dispersion.
+
+VARIANCE(): Calculates the variance of values in a column, which represents the average of the squared differences from the mean.
+
+FIRST(): Returns the first value in a column within a group.
+
+LAST(): Returns the last value in a column within a group.
+
+MEDIAN(): Calculates the median value of a column, which is the middle value when the values are sorted.
+
+RANK(): Assigns a rank to each row based on the specified column values, with ties receiving the same rank.
+
+NTILE(): Divides the result set into a specified number of groups or buckets, assigning each row a bucket number.
+
+These aggregate functions allow you to perform calculations on data at a higher level, summarizing information and generating useful insights from your database. They are particularly useful when combined with the GROUP BY clause to analyze data across different groups or categories.
+
+------------------------------------------------------------------
+Here are some commands that come under DDL:
+
+CREATE
+ALTER
+DROP
+TRUNCATE
+
+
+Here are some commands that come under DML:
+INSERT
+DELETE
+UPDATE
+
+Here are some commands that come under TCL:
+COMMIT
+ROLLBACK
+SAVEPOINT
+
+--------------------------------------------------------------------------
+TYPES OF JOINS
+
+INNER JOIN
+SELF JOIN
+CROSS JOIN
+OUTER JOIN
+
+
+from django.db import models
+
+class MyModel(models.Model):
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
+    # other fields...
+
+------------------------------------------------------------------
+uuid 
+reference:--   https://techbullion.com/why-use-uuid-instead-of-id-as-a-primary-key/
+
+
+
+
+

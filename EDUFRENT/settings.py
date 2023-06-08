@@ -121,7 +121,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': config('NAME'),
         # 'USER': config('USER'),
-        'USER':'root',
+        'USER':'anil',
         'PASSWORD' : config('PASSWORD'),
         'HOST': config('HOST'),
         'PORT': config('PORT'),
