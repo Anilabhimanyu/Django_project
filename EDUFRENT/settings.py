@@ -14,6 +14,9 @@ from pathlib import Path
 # import mysql.connectord
 import os
 from datetime import timedelta
+from decouple import config
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,9 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-k#1yo4ohf8ic%a&gbs*7n3*4od^ywxsodso)a&xi@r-3eo#985'
+# SECRET_KEY=config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = config('DEBUG', cast=bool)
+
 
 ALLOWED_HOSTS = []
 
@@ -45,6 +51,7 @@ INSTALLED_APPS = [
     'Enrollments',
     "Credits",
     'rest_framework_simplejwt',
+    'referrals',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -97,17 +104,29 @@ WSGI_APPLICATION = 'EDUFRENT.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mydb',
+#         'USER': 'root',
+#         'PASSWORD': 'password',
+#         'HOST':'localhost',
+#         'PORT':'3306',
+#     },
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
-        'USER': 'root',
-        'PASSWORD': 'password',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'NAME': config('NAME'),
+        # 'USER': config('USER'),
+        'USER':'root',
+        'PASSWORD' : config('PASSWORD'),
+        'HOST': config('HOST'),
+        'PORT': config('PORT'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
